@@ -1,8 +1,8 @@
 import express from "express";
-import { AppDataSource } from "./database/dataSource";
+import { AppDataSource } from "./database/AppDataSource";
 
 AppDataSource.initialize().then(() => {
-    console.log("DataSource initialized!");
+    console.log("DataSource has been initialized!");
 })
 .catch((error) => console.log(error))
 

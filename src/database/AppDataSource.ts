@@ -1,6 +1,7 @@
 import "reflect-metadata";
 import { DataSource } from "typeorm";
-import { Cavalo } from "../models/Cavalo";
+import { Cavalo } from "../entities/Cavalo";
+import { Test1651079404450 } from "./migrations/1651079404450-Test";
 
 export const AppDataSource = new DataSource({
     type: "postgres",
@@ -10,8 +11,11 @@ export const AppDataSource = new DataSource({
     password: "123",
     database: "alisson",
     entities: [Cavalo],
-    synchronize: true,
+    synchronize: false,
     logging: false,
+    migrations: [
+        Test1651079404450
+    ],
 })
 
 /* AppDataSource.initialize()
