@@ -1,1 +1,0 @@
-"dev": "ts-node src/server.ts",

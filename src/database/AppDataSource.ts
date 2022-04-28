@@ -1,7 +1,8 @@
 import "reflect-metadata";
 import { DataSource } from "typeorm";
-import { Cavalo } from "../entities/Cavalo";
-import { Test1651079404450 } from "./migrations/1651079404450-Test";
+import { Breed } from "../entities/Breed";
+import { Horse } from "../entities/Horse";
+import { CreateHorseAndBreed1651153516876 } from "./migrations/1651153516876-CreateHorseAndBreed";
 
 export const AppDataSource = new DataSource({
     type: "postgres",
@@ -10,16 +11,18 @@ export const AppDataSource = new DataSource({
     username: "alisson",
     password: "123",
     database: "alisson",
-    entities: [Cavalo],
+    entities: [
+        Horse,
+        Breed
+    ],
     synchronize: false,
     logging: false,
     migrations: [
-        Test1651079404450
+        CreateHorseAndBreed1651153516876
     ],
 })
 
-/* AppDataSource.initialize()
-    .then(() => {
-        console.log("Database initialized!");
-    })
-    .catch((error) => console.log(error)) */
+// AppDataSource.initialize().then(() => {
+//     console.log("DataSource has been initialized!");
+// })
+// .catch((error) => console.log(error))
