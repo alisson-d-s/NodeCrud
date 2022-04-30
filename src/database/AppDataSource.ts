@@ -6,7 +6,8 @@ import { CreateHorseAndBreed1651153516876 } from "./migrations/1651153516876-Cre
 
 export const AppDataSource = new DataSource({
     type: "postgres",
-    host: "localhost",
+    host: "psql-container",
+    //host: "localhost",
     port: 5432,
     username: "alisson",
     password: "123",

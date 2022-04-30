@@ -2,10 +2,11 @@
   "name": "nodecrud",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "build/server.js",
   "scripts": {
-    "dev": "ts-node src/server.ts",
-    "typeorm": "typeorm-ts-node-commonjs"
+    "dev": "ts-node src/server.ts",    
+    "start": "node server.js",
+    "migrations": "typeorm migration:run -d database/AppDataSource.js"
   },
   "author": "",
   "license": "ISC",

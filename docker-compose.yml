@@ -1,0 +1,31 @@
+version: "3.9"
+
+services:
+  db:
+    image: postgres:14.2-alpine
+    container_name: psql-container
+    restart: always
+    volumes:
+      - "./db/data:/var/lib/postgres"
+    environment:
+      - POSTGRES_USER=alisson
+      - POSTGRES_PASSWORD=123
+      - POSTGRES_DATABASE=alisson
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U alisson"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+      start_period: 10s
+  api:
+    build: 
+      context: .
+      dockerfile: Dockerfile
+    container_name: node-container
+    restart: always
+    ports:
+      - "3000:3000"
+    command: sh -cx "npm run migrations && npm run start"
+    depends_on:
+      db:
+        condition: service_healthy

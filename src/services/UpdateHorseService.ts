@@ -16,9 +16,6 @@ export class UpdateHorseService {
         if (!idNumber){
             return new Error("Invalid Id!");
         }
-        if (!breedId){
-            return new Error("Invalid Breed!");
-        }
 
         const horse = await AppDataSource.manager.findOne(Horse, { where: { id: idNumber } })
         const breed = await AppDataSource.manager.findOne(Breed, { where: { id: breedId } })
