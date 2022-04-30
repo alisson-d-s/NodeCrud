@@ -1,4 +1,4 @@
-#A typescript project using Node, Express, Typeorm and Postgres
+# A typescript project using Node, Express, Typeorm and Postgres
 
 Build the typescript before run the containers
 
