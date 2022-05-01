@@ -1,5 +1,3 @@
 # A typescript project using Node, Express, Typeorm and Postgres
 
-Build the typescript before run the containers
-
 Some good pratices to containers production deploy was not applied
